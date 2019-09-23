@@ -40,6 +40,14 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="contact" class="col-md-4 col-form-label text-md-right">{{ __('contact') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="contact" type="contact" class="form-control @error('contact') is-invalid @enderror" name="contact" value="{{ old('contact') }}" required autocomplete="contact">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
@@ -59,6 +67,14 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
+                        </div>
+
+                        <div class="form-group row ">    
+                        <label for="Kategori" class="col-md-4 col-form-label text-md-right">kategori</label>
+                        
+                        <div class="col-md-6">
+                        <select required="required" class="form-control form-control-sm" id="kategori" name="kategori"><option selected="selected" value=""></select>
+                        </div>
                         </div>
 
                         <div class="form-group row">
