@@ -49359,6 +49359,15 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+$(".btn-refresh").click(function () {
+  $.ajax({
+    type: 'GET',
+    url: '/refresh_captcha',
+    succes: function succes(data) {
+      $(".captcha span").html(data.captcha);
+    }
+  });
+});
 
 /***/ }),
 
