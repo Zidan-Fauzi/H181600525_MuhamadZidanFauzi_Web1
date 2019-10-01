@@ -13,4 +13,14 @@ class KategoriArtikelController extends Controller
 
         return view(view,'kategori_artikel.index',compact('listKategoriArtikel'));
     }
+
+    public function show($id){
+        //eloquent
+
+        $KategoriArtikel=KategoriArtikel::where('id',$id)->first(); //select=from kategori_artikel where id=$id limit 1
+
+
+        return view(view,'kategori_artikel.show',compact('KategoriArtikel'));
+    }
+
 }

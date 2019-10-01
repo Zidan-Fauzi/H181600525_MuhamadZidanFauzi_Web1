@@ -25,10 +25,11 @@
             <td>{!! $item->nama !!}</td>
             <td>{!! $item->users_id !!</td>
             <td>{!! $item->created_ad->format('d/M/Y H:i:s')!!</td>
+            <td><a href="{!!route('kategori_artikel.show',[$item->id])!!}">lihat</a></td>    
         </tr>   
 
         @endforeach
-
+        </table>
                 </div>
             </div>
         </div>
@@ -42,6 +43,6 @@
 </head>
 <body>
     
-    </table>
+    
 </body>
 </html>
