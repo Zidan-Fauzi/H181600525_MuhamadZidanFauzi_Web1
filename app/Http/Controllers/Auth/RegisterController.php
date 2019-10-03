@@ -53,7 +53,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'kontak' => ['required', 'string', 'min:8', 'unique:users'],
-            'captcha' => 'required|captcha'
+            'captcha' => ['required|captcha']
         ]);
     }
 
@@ -73,8 +73,5 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function refreshCaptcha()
-    {
-        return captcha_img();
-    }
+    
 }

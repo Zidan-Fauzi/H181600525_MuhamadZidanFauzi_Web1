@@ -48,14 +48,14 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('captcha') }}</label>
+                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Captcha') }}</label>
 
                             <div class="col-md-6">
-                                <div class="captcha">
-                                    <span>{!! captcha_img() !!}</span>
-                                    <button type="button" class="btn btn-success btn refresh">Refresh</button>
+                                <div class="refereshrecapcha">
+                                    {!! captcha_img('flat') !!}
                                 </div>
-                                <input id="captcha" type="text" class="form-control mt-2 @error('captcha') is-invalid @enderror" name="captcha" placeholder="enter captcha">
+                                <a href="javascript:void(0)" onclick="refreshCaptcha()" type="button" class="btn">Refresh</a>
+                                <input id="captcha" type="text" class="form-control" name="captcha" required>
 
                                 @error('captcha')
                                     <span class="invalid-feedback" role="alert">
@@ -63,8 +63,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>                        
-
+                        </div>                                        
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
@@ -96,4 +95,21 @@
         </div>
     </div>
 </div>
+@endsection
+@section('scripts')
+<script>
+function refreshCaptcha(){
+$.ajax({
+url: "/refereshcapcha",
+type: 'get',
+  dataType: 'html',        
+  success: function(json) {
+    $('.refereshrecapcha').html(json);
+  },
+  error: function(data) {
+    alert('Try Again.');
+  }
+});
+}
+</script>
 @endsection
