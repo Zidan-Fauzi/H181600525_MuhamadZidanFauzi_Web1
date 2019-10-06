@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\KategoriArtikel;
+use App\KategoriArtikel;
 class KategoriArtikelController extends Controller
 {
     //
@@ -11,7 +11,7 @@ class KategoriArtikelController extends Controller
         //eloquent => orm(objek relasional maping)
         $listKategoriArtikel=KategoriArtikel::all(); //select kategori from artikel
 
-        return view(view,'kategori_artikel.index',compact('listKategoriArtikel'));
+        return view('kategori_artikel.index',compact('listKategoriArtikel'));
     }
 
     public function show($id){
@@ -23,4 +23,18 @@ class KategoriArtikelController extends Controller
         return view('kategori_artikel.show',compact('KategoriArtikel'));
     }
 
+    public function create(){
+        return view('kategori_artikel.create');
+    }
+
+    public function store(Request $request){
+        $input= $request->all();
+
+        KategoriArtikel::create([
+            'nama'=>$input['nama'],
+            'users_id'=>$input['users_id']
+        ]);
+
+        return redirect(route('kategori_artikel.index'));
+    }
 }

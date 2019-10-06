@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class KategoriArtikel extends Model
+class KategoriGaleri extends Model
 {
-    protected $table='kategori_artikel';
+    protected $table='kategori_galeri';
     protected $fillable=[
         'nama,users_id'
     ];
