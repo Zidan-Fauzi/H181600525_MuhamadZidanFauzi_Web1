@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\KategoriArtikel;
 class KategoriArtikelController extends Controller
 {
-    //
     public function index(){
         //eloquent => orm(objek relasional maping)
         $listKategoriArtikel=KategoriArtikel::all(); //select kategori from artikel

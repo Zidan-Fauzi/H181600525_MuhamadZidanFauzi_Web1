@@ -40,3 +40,15 @@ Route::get('/kategori_pengumuman','KategoriPengumumanController@index')->name('k
 Route::get('/kategori_pengumuman/create','KategoriPengumumanController@create')->name('kategori_pengumuman.create');
 Route::post('/kategori_pengumuman','KategoriPengumumanController@store')->name('kategori_pengumuman.store');
 Route::get('/kategori_pengumuman/{id}','KategoriPengumumanController@show')->name('kategori_pengumuman.show');
+
+//
+
+Route::get('/artikel','ArtikelController@index')->name('artikel.index');
+Route::get('/artikel/create','ArtikelController@create')->name('artikel.create');
+Route::post('/artikel','ArtikelController@store')->name('artikel.store');
+Route::get('/artikel/{id}','ArtikelController@show')->name('artikel.show');
+
+Route::get('/berita','BeritaController@index')->name('berita.index');
+Route::get('/berita/create','BeritaController@create')->name('berita.create');
+Route::post('/berita','BeritaController@store')->name('berita.store');
+Route::get('/berita/{id}','BeritaController@show')->name('berita.show');
