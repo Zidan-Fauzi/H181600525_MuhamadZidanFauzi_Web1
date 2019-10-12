@@ -5,11 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Tambah Berita</div>
+                <div class="card-header">Tambah Pengumuman</div>
 
                 <div class="card-body">
-                    <form method="post" action="{!! route('berita.store') !!}">
-                        @include('berita.form')
+                    <form method="post" action="{!! route('pengumuman.store') !!}">
+                        @include('pengumuman.form')
 
 
                     </form>

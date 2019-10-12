@@ -52,3 +52,13 @@ Route::get('/berita','BeritaController@index')->name('berita.index');
 Route::get('/berita/create','BeritaController@create')->name('berita.create');
 Route::post('/berita','BeritaController@store')->name('berita.store');
 Route::get('/berita/{id}','BeritaController@show')->name('berita.show');
+
+Route::get('/pengumuman','PengumumanController@index')->name('pengumuman.index');
+Route::get('/pengumuman/create','PengumumanController@create')->name('pengumuman.create');
+Route::post('/pengumuman','PengumumanController@store')->name('pengumuman.store');
+Route::get('/pengumuman/{id}','PengumumanController@show')->name('pengumuman.show');
+
+Route::get('/galeri','GaleriController@index')->name('galeri.index');
+Route::get('/galeri/create','GaleriController@create')->name('galeri.create');
+Route::post('/galeri','GaleriController@store')->name('galeri.store');
+Route::get('/galeri/{id}','GaleriController@show')->name('galeri.show');
