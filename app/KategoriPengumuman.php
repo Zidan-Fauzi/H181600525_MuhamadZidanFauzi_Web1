@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class KategoriPengumuman extends Model
 {
@@ -11,7 +13,9 @@ class KategoriPengumuman extends Model
         'nama','users_id'
     ];
 
-    
+    protected $casts=[
+        'deleted_at'=>'datetime'
+    ];
 
 
 

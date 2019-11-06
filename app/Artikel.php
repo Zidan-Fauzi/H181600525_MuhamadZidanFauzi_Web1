@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class artikel extends Model
 {
@@ -14,4 +16,9 @@ class artikel extends Model
     protected $casts=[
 
     ];
+
+    protected $casts=[
+        'deleted_at'=>'datetime'
+    ];
+    
 }

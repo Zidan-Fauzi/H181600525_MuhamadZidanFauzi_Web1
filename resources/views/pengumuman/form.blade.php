@@ -5,7 +5,7 @@
     <label for="judul" class="col-md-4 col-form-label text-md-right">{{ __('Judul') }}</label>
 
     <div class="col-md-6">
-        <input id="judul" type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{ old('judul') }}" required  autofocus>
+    {!! Form::text('judul',null,['class'=>"form-control",'required','autofocus']);!!}
 
         @error('judul')
             <span class="invalid-feedback" role="alert">
@@ -20,15 +20,15 @@
 
 
 <div class="form-group row">
-    <label for="kategori_berita_id" class="col-md-4 col-form-label text-md-right">{{ __('Kategori Berita') }}</label>
+    <label for="kategori_berita_id" class="col-md-4 col-form-label text-md-right">{{ __('Kategori Pengumuman') }}</label>
 
     <div class="col-md-6">
-        {!! Form::select('kategori_berita_id',$KategoriBerita,null,["class"=>"form-control","required"] ) !!}
+        {!! Form::select('kategori_pengumuman_id',$KategoriPengumuman,null,["class"=>"form-control","required"] ) !!}
 
 
 
 
-        @error('kategori_berita_id')
+        @error('kategori_pengumuman_id')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
@@ -55,7 +55,7 @@
 
 
 
-<input id="users_id" type="hidden" class="form-control @error('users_id') is-invalid @enderror" name="users_id" value="{{ Auth::id() }}" required  >
+{!! Form::hidden('users_id', Auth::id());!!}
 
     <div class="form-group row mb-0">
     <div class="col-md-6 offset-md-4">
@@ -63,7 +63,7 @@
             {{ __('Simpan Data') }}
         </button>
 
-        <a href="{!! route('kategori_berita.index') !!}" class="btn btn-danger">
+        <a href="{!! route('kategori_pengumuman.index') !!}" class="btn btn-danger">
             {{ __('Batal') }}
         </a>
     </div>

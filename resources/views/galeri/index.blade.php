@@ -21,6 +21,7 @@
             <td>Kategori</td>
             <td>Users Id</td>
             <td>Create</td>
+            <td>Update</td>
             <td>Aksi</td>
         </tr>
 
@@ -33,7 +34,15 @@
             <td>{!! $item->kategori_galeri_id !!}</td>
             <td>{!! $item->users_id !!}</td>
             <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
-            <td><a href="{!!route('galeri.show',[$item->id])!!}">lihat</a></td>    
+            <td>{!! $item->updated_at->format('d/m/Y H:i:s') !!}</td>
+            <td><a href="{!!route('galeri.show',[$item->id])!!}" class="btn btn-primary">Lihat</a>
+                <a href="{!!route('galeri.edit',[$item->id])!!}" class="btn btn-primary">Ubah</a>
+                {!! Form::open(['route' => ['galeri.destroy', $item->id],'method'=>'delete'])!!}
+                
+                {!! Form::submit('Hapus',['class'=>'btn btn-sm btn-danger','onclick'=>"return confirm('Apakah anda yakin ingin menghapus file ini')"]); !!}
+                
+                {!! Form::close() !!}
+            </td>       
         </tr>   
 
         @endforeach
