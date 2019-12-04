@@ -40,7 +40,7 @@
     <label for="path" class="col-md-4 col-form-label text-md-right">{{ __('Path') }}</label>
 
     <div class="col-md-6">
-    {!! Form::text('path',null,['class'=>"form-control",'required','autofocus']);!!}
+    {!! Form::file('path',null,['class'=>"form-control",'required','autofocus']);!!}
 
         @error('path')
             <span class="invalid-feedback" role="alert">

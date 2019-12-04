@@ -17,9 +17,6 @@ class Galeri extends Model
 
     ];
 
-    protected $casts=[
-        'deleted_at'=>'datetime'
-    ];
-
+    
 }
 

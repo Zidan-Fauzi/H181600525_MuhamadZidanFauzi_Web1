@@ -17,8 +17,6 @@ class artikel extends Model
 
     ];
 
-    protected $casts=[
-        'deleted_at'=>'datetime'
-    ];
+    
     
 }

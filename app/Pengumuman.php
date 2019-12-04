@@ -17,8 +17,6 @@ class pengumuman extends Model
 
     ];
 
-    protected $casts=[
-        'deleted_at'=>'datetime'
-    ];
+    
 
 }
